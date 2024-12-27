@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+
+    <form th:action="@{/submit}" method="post">
+        <!-- CSRF Token -->
+        <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+        
+        <label for="message">Enter Message:</label>
+        <input type="text" id="message" name="message"/>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <p th:text="${message}"></p>
+</body>
+</html>
